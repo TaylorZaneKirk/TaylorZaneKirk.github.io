@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "START OF BLOG"
 date:   2014-02-08 21:08:33
 categories: jekyll update
+permalink: start_of_blog
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
