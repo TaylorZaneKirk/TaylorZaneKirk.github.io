@@ -1,0 +1,8 @@
+name: Your New Jekyll Site
+# GitHub Defaults
+lsi: false
+pygments: true
+safe: true
+
+# UTF-8 & parse errors fix
+markdown: redcarpet
