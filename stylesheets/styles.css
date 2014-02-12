@@ -15,11 +15,14 @@ div.header{
 	border: 2px black solid;
 	font-family: 'Geo', sans-serif;
 }
+div.image{
+	content:url("../images/spot.png");
+}
 
-h1,h2{
+h1{
 	width:50%;
 	height:20%;
-	
+	font-size: 48px;
 }
 
 #PageTitle{
