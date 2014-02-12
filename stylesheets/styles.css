@@ -6,7 +6,7 @@ html,body{
 	display: inline-block;
 	height: 97%;
 	width: 98.5%;
-	font-size: 48px;
+	font-size: 20px;
 	line-height:1.5;
 }
 div.header{
@@ -14,9 +14,11 @@ div.header{
 	height:20%;
 	border: 2px black solid;
 	font-family: 'Geo', sans-serif;
+	
 }
-div.image{
-	content:url("../images/spot.png");
+div#HeaderContent1,#HeaderContent2{
+	display:inline;
+	padding-right:5em;
 }
 
 h1{
