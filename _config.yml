@@ -3,6 +3,6 @@ name: PROGRAMMING BLOG
 lsi: false
 pygments: true
 safe: true
-
+excerpt_separator: ""
 # UTF-8 & parse errors fix
 markdown: redcarpet
