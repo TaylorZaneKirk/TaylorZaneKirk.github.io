@@ -44,6 +44,11 @@ div.post{
 	font-size: 12px;
 	
 }
+div.code{
+	font-size: 10px;
+	border: 2px black solid;
+	background-color: lightgray;
+}
 p.meta{
 	font-size:20px;
 	text-align:center;

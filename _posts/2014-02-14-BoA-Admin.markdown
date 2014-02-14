@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "Blades of Aeon (Lingo)"
+date:   2014-02-14 14:50:33
+permalink: BoA_Admin
+---
+
+<div class="post">
+	DISCLAIMER: VERY OLD MMORPG CODE<br>
+	This script I wrote in order to basically put a lock onto each admin's individual account that is not <br>
+	stored anywhere in the client source and is up to the admin to remember. This is to prevent someone from <br>
+	hacking into the admin's account and abusing all their power.<br>
+	<br>
+	In your client find<br>
+	<div class="code">
+		if word 1 of TheText = "/ignore" then<br>
+			<br>
+			Ignore(theText)<br>
+			put "" into field member "SendChat"<br>
+			exit<br>
+			<br>
+		end if<br>
+	</div>
+	Under that, place: <br>
+	<div class="code">
+		if word 1 of TheText = "/code" then<br>
+			set TheCodeUsed = word 2 of TheText<br>
+			gConnect.sendNetMessage("system.scripts", "Codes", TheCodeUsed)<br>
+			set TheText = "Checking to see if code '" & TheCodeUsed & "' is a valid code..."<br>
+			AddToChat(TheText)<br>
+		end if<br>
+		put "" into field member "SendChat"<br>
+		exit<br>
+	</div>
+	Then, in your global scripts find:<br>
+	<div class="code">
+		"Codes":<br>
+		  set MyName = string(user.name)<br>
+		  Set TheCodeUsed = string(fullmsg.content)<br>
+		  if MyName = "(An Admin Name)" then<br>
+			<br>
+			if TheCodeUsed = "(Code Here)" then<br>
+			  Set CodeTrue = TRUE<br>
+			  movie.sendMessage(MyName, "CodeCheck", CodeTrue)<br>
+			end if<br>
+			<br>
+			if TheCodeUsed <> "(Same code)" then<br>
+			  Set CodeTrue = FALSE<br>
+			  movie.sendMessage(MyName, "CodeCheck", CodeTrue)<br>
+			end if<br>
+		end if<br>
+	</div>
+	Return to your source file and find 'if newMessage.subject contains "Broadcast" then'<br>
+	and place this underneath:<br>
+	<div class="code"><br>
+		if newMessage.subject = "CodeCheck" then<br>
+        set CodeBeingChecked = string(newMessage.content)<br>
+        if CodeBeingChecked = TRUE then<br>
+          set IAmUberDuber = TRUE<br>
+          set TheText = "The code you entered has granted you Staff Control"<br>
+          AddToChat(TheText)<br>
+        end if<br>
+        if CodeBeingChecked = FALSE then<br>
+          Set IAmUberDuber = FALSE<br>
+          Set TheText = "Sorry, the code you used is invalid."<br>
+          AddToChat(theText)<br>
+        end if<br>
+      end if<br>
+	 </div>
+</div>
