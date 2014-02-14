@@ -67,4 +67,7 @@ permalink: BoA_Admin
         end if<br>
       end if<br>
 	 </div>
+	 Now in the scripts of things like World Editor place IAmUberduber<br>
+	 in the globals and have the script check to make sure it's true before<br>
+	 it proceeds to open or use the script
 </div>
